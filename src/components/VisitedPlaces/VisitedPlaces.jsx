@@ -29,7 +29,8 @@ const VisitedPlaces = (props) => {
         try {
           let placesData = [];
           const response = await axios.get(
-            `http://localhost:8000/get_visited_places/${userId}`
+            // `http://localhost:8000/get_visited_places/${userId}`
+            `https://travel-app-server-1.onrender.com/get_visited_places/${userId}`
           );
 
           if (response.data && Array.isArray(response.data.visited_places)) {

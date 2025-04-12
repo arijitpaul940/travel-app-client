@@ -13,7 +13,8 @@ const Destinations = (props) => {
 
       try {
         const response = await axios.get(
-          "http://localhost:8000/get_all_destinations"
+          // "http://localhost:8000/get_all_destinations"
+          "https://travel-app-server-1.onrender.com/get_all_destinations"
         );
 
         if (response.data && Array.isArray(response.data.destinations)) {

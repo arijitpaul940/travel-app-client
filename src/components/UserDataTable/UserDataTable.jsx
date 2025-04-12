@@ -15,7 +15,8 @@ const UserDataTable = () => {
     setLoading(true);
     setError(null);
 
-    fetch("http://localhost:8000/get_all_users")
+    // fetch("http://localhost:8000/get_all_users")
+    fetch("https://travel-app-server-1.onrender.com/get_all_users")
       .then((response) => response.json())
       .then((data) => {
         console.log(1177, { data });
