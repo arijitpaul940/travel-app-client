@@ -34,7 +34,8 @@ function RecommendedPlaces() {
         try {
           let placesData = [];
           const response = await axios.get(
-            `http://localhost:8000/recommendations/${userId}`
+            // `http://localhost:8000/recommendations/${userId}`
+            `https://travel-app-server-1.onrender.com/recommendations/${userId}`
           );
 
           if (response.data && Array.isArray(response.data.recommendations)) {
