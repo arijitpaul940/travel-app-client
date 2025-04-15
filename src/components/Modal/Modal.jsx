@@ -9,7 +9,7 @@ const Modal = (props) => {
     <Dialog
       open={isOpen}
       onClose={onClose}
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-[#000000cc]"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-[#000000cc] bg-opacity-50"
     >
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
@@ -20,10 +20,10 @@ const Modal = (props) => {
       >
         <div className="flex flex-col bg-white">
           <div className="sticky top-0 z-10 flex h-[48px] items-center justify-between gap-4 bg-white p-8">
-            <span className="text-base font-bold text-black md:text-xl">
+            <span className="text-base font-bold text-gray-800 md:text-xl">
               {title ? title : null}
             </span>
-            <button onClick={onClose} className="text-black">
+            <button onClick={onClose} className="text-gray-800">
               <i className="fa-solid fa-xmark text-2xl md:text-4xl"></i>
             </button>
           </div>
