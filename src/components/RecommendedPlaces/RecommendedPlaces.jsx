@@ -16,6 +16,7 @@ function RecommendedPlaces() {
       const enteredId = window.prompt(
         "Please enter your User ID to get recommendations:"
       );
+
       if (enteredId === null || enteredId.trim() === "") {
         setError("No User ID entered. Cannot fetch recommendations.");
         setUserId("");

@@ -20,10 +20,10 @@ const Modal = (props) => {
       >
         <div className="flex flex-col bg-white">
           <div className="sticky top-0 z-10 flex h-[48px] items-center justify-between gap-4 bg-white p-8">
-            <span className="text-base font-bold text-primary-dark md:text-xl">
+            <span className="text-base font-bold text-black md:text-xl">
               {title ? title : null}
             </span>
-            <button onClick={onClose} className="text-primary-dark">
+            <button onClick={onClose} className="text-black">
               <i className="fa-solid fa-xmark text-2xl md:text-4xl"></i>
             </button>
           </div>
