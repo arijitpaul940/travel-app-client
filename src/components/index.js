@@ -7,4 +7,5 @@ export { default as UserDataTable } from "./UserDataTable/UserDataTable";
 export { default as Destinations } from "./Destinations/Destinations";
 export { default as VisitedPlaces } from "./VisitedPlaces/VisitedPlaces";
 export { default as RecommendedPlaces } from "./RecommendedPlaces/RecommendedPlaces";
+export { default as BudgetEstimator } from "./BudgetEstimator/BudgetEstimator";
 export { default as Footer } from "./Footer/Footer";

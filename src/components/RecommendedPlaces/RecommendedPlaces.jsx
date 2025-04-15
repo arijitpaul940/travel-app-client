@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+import { Modal, BudgetEstimator } from "../../components";
+
 function RecommendedPlaces() {
   const [userId, setUserId] = useState(null);
   const [recommendedPlaces, setRecommendedPlaces] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [selectedPlace, setSelectedPlace] = useState(null);
+  const [isBudgetPlannerOpen, setIsBudgetPlannerOpen] = useState(false);
 
   useEffect(() => {
     if (userId === null) {
@@ -30,8 +34,7 @@ function RecommendedPlaces() {
         try {
           let placesData = [];
           const response = await axios.get(
-            // `http://localhost:8000/recommendations/${userId}`
-            `https://travel-app-server-1.onrender.com/recommendations/${userId}`
+            `http://localhost:8000/recommendations/${userId}`
           );
 
           if (response.data && Array.isArray(response.data.recommendations)) {
@@ -92,7 +95,7 @@ function RecommendedPlaces() {
 
   return (
     <div className="container mx-auto p-4">
-      <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
+      <h2 className="text-3xl font-bold text-center mb-8 !text-white">
         Recommended Places for User {userId}
       </h2>
 
@@ -111,7 +114,17 @@ function RecommendedPlaces() {
                 />
               </div>
 
-              <div className="p-4">
+              <div className="p-4 relative">
+                <button
+                  title="Tell me budget"
+                  className="absolute top-4 right-4"
+                  onClick={() => {
+                    setSelectedPlace(place);
+                    setIsBudgetPlannerOpen(true);
+                  }}
+                >
+                  <i className="fa-solid fa-brain text-xl text-gray-800"></i>
+                </button>
                 <h3 className="text-sm font-semibold mb-2 text-blue-600">
                   <span>ID: </span>
                   {place.DestinationID}
@@ -136,6 +149,14 @@ function RecommendedPlaces() {
           </p>
         )}
       </div>
+
+      <Modal
+        title={"Budget Planner"}
+        isOpen={isBudgetPlannerOpen}
+        onClose={() => setIsBudgetPlannerOpen(false)}
+      >
+        <BudgetEstimator selectedPlace={selectedPlace} />
+      </Modal>
     </div>
   );
 }
