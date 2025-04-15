@@ -9,7 +9,7 @@ const Modal = (props) => {
     <Dialog
       open={isOpen}
       onClose={onClose}
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-50"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-[#000000cc]"
     >
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
