@@ -57,7 +57,7 @@ export default function BudgetEstimator(props) {
           onChange={(e) => setPlace(e.target.value)}
           placeholder="Enter place"
           className="w-full p-2 border rounded"
-          required
+          required={true}
         />
         <input
           type="text"
@@ -65,7 +65,7 @@ export default function BudgetEstimator(props) {
           onChange={(e) => setTimeToVisit(e.target.value)}
           placeholder="Time to visit"
           className="w-full p-2 border rounded"
-          required
+          required={true}
         />
         <input
           type="text"
@@ -73,7 +73,7 @@ export default function BudgetEstimator(props) {
           onChange={(e) => setDuration(e.target.value)}
           placeholder="3 Days, 4 Night"
           className="w-full p-2 border rounded"
-          required
+          required={true}
         />
         <input
           type="number"
@@ -81,7 +81,7 @@ export default function BudgetEstimator(props) {
           onChange={(e) => setPersons(parseInt(e.target.value))}
           placeholder="Number of persons"
           className="w-full p-2 border rounded"
-          required
+          required={true}
         />
         <button
           onClick={handleEstimate}
